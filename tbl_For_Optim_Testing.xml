@@ -1,0 +1,46 @@
+<xsd:schema targetNamespace="MyURL" xmlns:schema="MyURL" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sqltypes="http://schemas.microsoft.com/sqlserver/2004/sqltypes" elementFormDefault="qualified">
+  <xsd:import namespace="http://schemas.microsoft.com/sqlserver/2004/sqltypes" schemaLocation="http://schemas.microsoft.com/sqlserver/2004/sqltypes/sqltypes.xsd" />
+  <xsd:element name="matmim.dbo.tbl_For_Optim_Testing">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Rec_Num" type="sqltypes:int" />
+        <xsd:element name="Date_Shift_Plus_7" type="sqltypes:date" minOccurs="0" />
+        <xsd:element name="Date_Shift_Minus_7" type="sqltypes:date" minOccurs="0" />
+        <xsd:element name="Date_Shift_Plus_5" type="sqltypes:date" minOccurs="0" />
+        <xsd:element name="Lookup_Col_Example" minOccurs="0">
+          <xsd:simpleType>
+            <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreKanaType IgnoreWidth">
+              <xsd:maxLength value="500" />
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="Patient_Id_1" minOccurs="0">
+          <xsd:simpleType>
+            <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreKanaType IgnoreWidth">
+              <xsd:maxLength value="50" />
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="Patient_Id_2" type="sqltypes:int" minOccurs="0" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+<matmim.dbo.tbl_For_Optim_Testing xmlns="MyURL">
+  <Rec_Num>1</Rec_Num>
+  <Date_Shift_Plus_7>1968-06-21</Date_Shift_Plus_7>
+  <Date_Shift_Minus_7>1968-06-21</Date_Shift_Minus_7>
+  <Date_Shift_Plus_5>1968-06-21</Date_Shift_Plus_5>
+  <Lookup_Col_Example>טבריה</Lookup_Col_Example>
+  <Patient_Id_1>IL-023686911</Patient_Id_1>
+  <Patient_Id_2>23686911</Patient_Id_2>
+</matmim.dbo.tbl_For_Optim_Testing>
+<matmim.dbo.tbl_For_Optim_Testing xmlns="MyURL">
+  <Rec_Num>3</Rec_Num>
+  <Date_Shift_Plus_7>1968-06-29</Date_Shift_Plus_7>
+  <Date_Shift_Minus_7>1968-06-29</Date_Shift_Minus_7>
+  <Date_Shift_Plus_5>1968-06-29</Date_Shift_Plus_5>
+  <Lookup_Col_Example>נהריה</Lookup_Col_Example>
+  <Patient_Id_1>IL-023730211</Patient_Id_1>
+  <Patient_Id_2>23730211</Patient_Id_2>
+</matmim.dbo.tbl_For_Optim_Testing>

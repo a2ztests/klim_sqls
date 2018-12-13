@@ -1,0 +1,29 @@
+קבלת קובץ נ"צ תחנות מהלקוח, שמירה כ - CSV עם שדות כמו בטבלה klimodo_monitor_stations והוספת שדה Amir_monitor_station_id עם ערך נגדי לשדה monitor_station_id
+
+ העברת טבלת Dim_City מה - BI ל DB שלי בשרת 25
+
+הרצת SQL ליצירת המרחקים בין התחנו לבין כל עיר: klimodo_build_monitor_station_city_distances.sql.
+
+
+
+הקמת הטבלה klimodo_monitor_stations_data לפי המכנה המשותף הרחב ביותר של כל השדות מכל קבצי ה - DATA ששלח הלקוח
+
+העלאת נתונים מקבצי ה - DATA של הלקוח לטבלה הנ"ל דרך TOAD
+
+הקמת טבלת המיפוי klimodo_city_to_monitor_station_partial_map
+
+שימוש בטבלת המיפוי הנ"ל לשליפת נתוני תושבי ערים המופיעים בטבלת המיפוי והתאמת התחנות אליהם לפי המיפוי תוך שימוש ב: Uriel_mapping_output.sql
+
+שימוש בטבלת המיפוי הנ"ל לשליפת נתוני תושבי ערים שאינם !!! מופיעים בטבלת המיפוי והתאמת התחנות אליהם לפי המרחק המינימלי בין העיר בה גר המאושפז לתחנה הרלוונטית תוך שימוש ב: Amir_mapping_output.sql
+
+הורדה  ל - CSV והעברת המידע בטבלאות הבאות הקודם לשמורה !!! תחת: /user/hive/warehouse/amir.db/Klimodo
+יש לפתוח חוצץ נפרד לכל קובץ ולפני העלאה להמיר את הקבצים הבאים שהורדתי בעזרת TOAD מ - sql server בעזרת Notepad++ לUTF8 ולשמור:
+
+klimodo_city_to_monitor_station_partial_map
+klimodo_monitor_stations_data
+klimodo_monitor_stations
+klimodo_monitor_station_city_distances
+Dim_City
+klimodo_Patient_dummy_Data
+++++++++++
+

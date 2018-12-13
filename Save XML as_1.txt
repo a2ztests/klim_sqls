@@ -1,0 +1,9 @@
+select [Rec_Num]
+      ,[Date_Shift_Plus_7]
+      ,[Date_Shift_Minus_7]
+      ,[Date_Shift_Plus_5]
+      ,[Lookup_Col_Example]
+      ,[Patient_Id_1]
+      ,[Patient_Id_2]
+  FROM [matmim].[dbo].[tbl_For_Optim_Testing]
+for XML AUTO, ELEMENTS, XMLSCHEMA ('MyURL')

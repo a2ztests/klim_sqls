@@ -1,0 +1,4 @@
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_Ez_Stat_Points_Center] (
+[Points_Id] int NOT NULL,
+[Lat] numeric(15, 13) NULL,
+[Lon] numeric(15, 13) NULL)

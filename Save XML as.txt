@@ -1,0 +1,31 @@
+USE [Matmim]
+GO
+ 
+-- Save XML records to a file:
+DECLARE @fileName VARCHAR(50)
+ 
+DECLARE @sqlStr VARCHAR(1000)
+DECLARE @sqlCmd VARCHAR(1000)
+ 
+SET @fileName = 'C:\Users\amir.shaked\Documents\Klimodo\Amir_GenerateX_SD_XML.xml'
+--SET @sqlStr = 'select TOP 50 [ContactID], [Title], [FirstName], [MiddleName], [LastName], [Suffix], [EmailAddress], [Phone] from --AdventureWorks.Person.Contact FOR XML PATH(''Contact''), ROOT(''Person.Contact'')'
+
+SET @sqlStr = '
+select  [Place_Symbol]
+      ,[Place_Desc]
+      ,[Place_Latitude]
+      ,[Place_Longitude]
+      ,[City_GK]
+      ,[City_Desc]
+      ,[City_Latitude]
+      ,[City_Longitude]
+      ,[Place_City_Distance]
+from [dbo].[tbl_Monitor_Station_City_Distances]
+for XML AUTO, ELEMENTS, XMLSCHEMA ('MyURL')
+--for XML PATH ('Places')
+
+'
+ 
+SET @sqlCmd = 'bcp "' + @sqlStr + '" queryout ' + @fileName + ' -w -T'
+ 
+EXEC xp_cmdshell @sqlCmd
